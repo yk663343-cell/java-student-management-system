@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Student {
     int id;
     String name;
@@ -19,7 +21,23 @@ class Student {
 
 public class StudentManagementSystem {
     public static void main(String[] args) {
-        Student s1 = new Student(1, "Yogesh", 19);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Student ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Student Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Student Age: ");
+        int age = sc.nextInt();
+
+        Student s1 = new Student(id, name, age);
+
+        System.out.println("\nStudent Details:");
         s1.displayStudent();
+
+        sc.close();
     }
 }
