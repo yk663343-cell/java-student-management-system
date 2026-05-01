@@ -1,43 +1,31 @@
-import java.util.Scanner;
-
 class Student {
     int id;
     String name;
-    int age;
 
-    Student(int studentId, String studentName, int studentAge) {
-        id = studentId;
-        name = studentName;
-        age = studentAge;
+    void addStudent(int i, String n) {
+        id = i;
+        name = n;
     }
 
     void displayStudent() {
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("-------------------");
+    }
+
+    void updateStudent(String newName) {
+        name = newName;
+        System.out.println("Student name updated.");
     }
 }
 
 public class StudentManagementSystem {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Student s = new Student();
 
-        System.out.print("Enter Student ID: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+        s.addStudent(101, "Yogesh");
+        s.displayStudent();
 
-        System.out.print("Enter Student Name: ");
-        String name = sc.nextLine();
-
-        System.out.print("Enter Student Age: ");
-        int age = sc.nextInt();
-
-        Student s1 = new Student(id, name, age);
-
-        System.out.println("\nStudent Details:");
-        s1.displayStudent();
-
-        sc.close();
+        s.updateStudent("Rahul");
+        s.displayStudent();
     }
 }
