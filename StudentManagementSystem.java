@@ -5,12 +5,14 @@ class Student {
     String name;
     String course;
     int age;
+    int marks;
 
-    void addStudent(int i, String n, String c, int a) {
+    void addStudent(int i, String n, String c, int a, int m) {
         id = i;
         name = n;
         course = c;
         age = a;
+        marks = m;
     }
 
     void displayStudent() {
@@ -18,11 +20,6 @@ class Student {
         System.out.println("Name: " + name);
         System.out.println("Course: " + course);
         System.out.println("Age: " + age);
-    }
-
-    void updateStudent(String newName, String newCourse) {
-        name = newName;
-        course = newCourse;
     }
 }
 
@@ -44,22 +41,13 @@ public class StudentManagementSystem {
 
         System.out.print("Enter Age: ");
         int age = sc.nextInt();
-        sc.nextLine();
 
-        s.addStudent(id, name, course, age);
+        System.out.print("Enter Marks: ");
+        int marks = sc.nextInt();
+
+        s.addStudent(id, name, course, age, marks);
 
         System.out.println("\nStudent Details:");
-        s.displayStudent();
-
-        System.out.print("\nEnter New Name: ");
-        String newName = sc.nextLine();
-
-        System.out.print("Enter New Course: ");
-        String newCourse = sc.nextLine();
-
-        s.updateStudent(newName, newCourse);
-
-        System.out.println("\nUpdated Student Details:");
         s.displayStudent();
 
         sc.close();
